@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PrintAndHide : MonoBehaviour
-{
-    private readonly int COUNTER_START_VALUE = 3;
-    private readonly int RED_DISABLE_VALUE = 100;
-    private readonly int BLUE_DISABLE_MIN_VALUE = 200;
-    private readonly int BLUE_DISABLE_MAX_VALUE = 250;
-
+{ 
     public Renderer rend;
     private int i;
     private int randomInt;
     // Start is called before the first frame update
     void Start()
     {
-        i = COUNTER_START_VALUE;
-        randomInt = Random.Range(BLUE_DISABLE_MIN_VALUE, BLUE_DISABLE_MAX_VALUE + 1);
+        i = 3;
+        randomInt = Random.Range(200, 251);
     }
 
     // Update is called once per frame
@@ -26,7 +21,7 @@ public class PrintAndHide : MonoBehaviour
         Debug.Log(this.name + ":" + i);
 
         // Deactivate gameobject for red when i is 100
-        if (gameObject.CompareTag("Red") && i == RED_DISABLE_VALUE)
+        if (gameObject.CompareTag("Red") && i == 100)
         {
             gameObject.SetActive(false);
         }
